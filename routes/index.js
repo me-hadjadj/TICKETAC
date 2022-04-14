@@ -10,4 +10,8 @@ router.get('/login', function(req, res, next) {
   res.render('login', {});
 });
 
+router.get('/error', function(req, res, next) {
+  res.render('error', {title: 'Error'});
+});
+
 module.exports = router;

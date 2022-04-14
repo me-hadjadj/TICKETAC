@@ -8,6 +8,10 @@ a {
   color: #00B7FF;
 }
 
+h2{
+  color:white;
+}
+
 #page-index{
 background: rgb(118,110,249);
 background: linear-gradient(0deg, rgba(118,110,249,1) 0%, rgba(0,212,255,1) 100%);

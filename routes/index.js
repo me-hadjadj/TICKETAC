@@ -42,10 +42,7 @@ router.get('/basket', async function(req, res, next) {
     req.session.basketTable = []
   }
   var journeySeleted = await journeyModel.findOne({_id : req.query.id})
-  req.session.basketTable.push(journeySeleted)
-
-  
-
+  req.session.basketTable.push(journeySeleted);
   res.render('basket', {tableau : req.session.basketTable});
 });
 

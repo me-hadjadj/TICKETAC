@@ -31,22 +31,22 @@
                                   </tr>
                                 </thead>
                                 <tbody>
-                                  <% var total ;
+                                  <% var total =0; i = 1;
                                   for (element of tableau) {%>
                                   <tr>
-                                    <th scope="row">1</th>
+                                    <th scope="row"><%=i++%></th>
                                     <td><%=element.departure%> / <%=element.arrival%></td>
-                                    <td><%=element.date%></td>
+                                    <td><%=new Date(element.date).toLocaleDateString()%></td>
                                     <td><%=element.departureTime%> pm</td>
                                     <td><%=element.price%> €</td>
                                   </tr>
-                                  <%}%>
+                                  <%total += element.price}%>
                                   <tr class="color-lastline">
                                     <th scope="row ">Total</th>
                                     <td></td>
                                     <td></td>
                                     <td></td>
-                                    <td>218 €</td>
+                                    <td><%=total%></td>
                                 </tbody>
                             
                     </table>

@@ -1,8 +1,14 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  
 }
 
 a {
   color: #00B7FF;
+}
+
+#page-index{
+background: rgb(118,110,249);
+background: linear-gradient(0deg, rgba(118,110,249,1) 0%, rgba(0,212,255,1) 100%);
 }

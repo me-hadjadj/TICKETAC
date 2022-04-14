@@ -10,7 +10,7 @@ var options = {
   useUnifiedTopology: true
  };
 
-// --------------------- BDD -----------------------------------------------------
+// --------------------- BDD ----------------------------------------------------
 mongoose.connect('mongodb+srv://XXXXXXXX:*********@XXXXXXXX-0hsfc.mongodb.net/Ticketac?retryWrites=true',
    options,
    function(err) {

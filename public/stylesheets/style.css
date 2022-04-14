@@ -45,6 +45,7 @@ h6{
   text-align: center;
   color: azure;
 }
+<<<<<<< HEAD
 
 /* ticket in result*/
 .ticket{
@@ -58,3 +59,9 @@ h6{
 .resultTab{
   margin-top: 100px;
 }
+=======
+/* TAB */
+.color-lastline{
+  background-color: rgb(231, 175, 189);
+}
+>>>>>>> 0d4e672316cac5280e6eeaaac1dc1f3b7abc35bf

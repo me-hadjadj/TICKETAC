@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var request = require('sync-request');
 var usersModel = require('../models/users')
+require('../models/connection')
 
 
 /* GET users listing. */
@@ -12,6 +13,7 @@ router.get('/', function(req, res, next) {
 //route sign-up
 router.post('/sign-up', async function(req, res) {
   var actualUser= await usersModel.findOne({mail:req.body.mail});
+  
  
  console.log(actualUser);
  if (actualUser == null) {
@@ -37,17 +39,19 @@ router.post('/sign-up', async function(req, res) {
     });
 
 router.post('/sign-in', async function(req, res) {
-  
-  
-      var actualUser= await usersModel.findOne({mail:req.body.mail});
-      console.log(actualUsers)
+  // console.log(req.body.mail)
+  var actualUser = await usersModel.findOne({mail:req.body.mail});
+  console.log(req.body.mail);
+  console.log(req.body.password);
+  console.log(actualUser)
+
       if(actualUser == null){
         res.redirect('/')
       } else {
         req.session.mail = req.body.mail;
       
         req.session.user = {
-          username: actualUser.username,
+          lastname: actualUser.lastname,
           id: actualUser.id
         }
         res.redirect('/homepage')}

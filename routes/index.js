@@ -12,8 +12,14 @@ router.get('/login', function(req, res, next) {
 
 router.get('/error', function(req, res, next) {
   res.render('error', {title: 'Error'});
+});
+
 router.get('/homepage', function(req, res, next) {
   res.render('homepage', {});
+});
+
+router.get('/result', function(req, res, next) {
+  res.render('result', {});
 });
 
 module.exports = router;

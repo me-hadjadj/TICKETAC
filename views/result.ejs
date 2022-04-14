@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- navbar -->
+    <%- include('navbar') %>
+        <!-- form-->
+        <div class="container d-flex flex-column align-items-center resultTab" style="height: 88vh;">
+            <div class="row col-12">
+                <div class="d-flex flex-column justify-content-center align-items-center">
+
+                    <label for="sign-in">
+                        <h2>Tickets available on ?? :</h2>
+                    </label>
+
+                    <div class="ticket bg-white col-8 d-flex align-items-center justify-content-between p-10 mt-4">
+                        <h4 class="m-2">Paris / Lille</h4>
+                        <h6 class="m-2">train departure at : 15:00 pm</h6>
+                        <div class="d-flex align-items-center">
+                            <h4 class="m-2">93e</h4>
+                            <button type="button" action="submit" class="btn btn-danger m-2">Ok</button>
+                        </div>
+                    </div>
+
+                    <div class="ticket bg-white col-8 d-flex align-items-center justify-content-between p-10 mt-4">
+                        <h4 class="m-2">Paris / Lille</h4>
+                        <h6 class="m-2">train departure at : 15:00 pm</h6>
+                        <div class="d-flex align-items-center">
+                            <h4 class="m-2">93e</h4>
+                            <button type="button" action="submit" class="btn btn-danger m-2">Ok</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- footer -->
+        <%- include('footer') %>
+</body>

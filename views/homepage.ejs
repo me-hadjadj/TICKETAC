@@ -19,13 +19,13 @@
                         <h2>One-way ticket :</h2>
                     </label>
 
-                        <form class="sign-in d-flex align-items-center col-6">
-                            <input name="" type="text" class="form-control m-2" id="formGroupExampleInput"
+                        <form action="/result" class="sign-in d-flex align-items-center col-6" method="POST">
+                            <input name="departureCity" type="text" class="form-control m-2"
                                 placeholder="From : Paris, Marseille ...">
-                            <input name="" type="text" class="form-control m-2" id="formGroupExampleInput2"
+                            <input name="arrivalCity" type="text" class="form-control m-2"
                                 placeholder="To : Lille, Nantes ...">
-                                <input name="" type="date" class="form-control m-2" id="formGroupExampleInput2">
-                            <button type="button" action="submit" class="btn btn-danger m-2">Go</button>
+                            <input name="date" type="date" class="form-control m-2">
+                            <button type="submit" class="btn btn-danger m-2">Go</button>
                         </form>
 
                     <img src="images/landmark.png" style="width: 250px; margin:70px">

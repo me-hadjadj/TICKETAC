@@ -22,22 +22,18 @@ router.get('/error', function(req, res, next) {
   res.render('error', {title: 'Error'});
 });
 
-router.get('/result', function(req, res, next) {
-  res.render('result', {title: 'Result'});
+router.post('/result',async function(req, res, next) {
+  // Récupère les trajets demandés par l'utilisateur
+  var journeyFind = await journeyModel.find({departure : req.body.departureCity, arrival : req.body.arrivalCity, date : req.body.date })
+  res.render('result', {journeyFind});
 });
 
 router.get('/homepage', function(req, res, next) {
   res.render('homepage', {});
 });
 
-router.get('/result',  function(req, res, next) {
- 
-  res.render('result', {});
-});
-
 router.get('/basket', async function(req, res, next) {
   var result = await journeyModel.find()
-  console.log(result);
   res.render('basket', {});
 });
 

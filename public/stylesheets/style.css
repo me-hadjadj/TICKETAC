@@ -11,6 +11,10 @@ a {
   color: #00B7FF;
 }
 
+h2{
+  color : white;
+}
+
 .color-navbar{
   background-color: aliceblue;
   height: 100px;

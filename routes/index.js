@@ -33,8 +33,13 @@ router.get('/homepage', function(req, res, next) {
 });
 
 router.get('/basket', async function(req, res, next) {
-  var result = await journeyModel.find()
-  res.render('basket', {});
+  if (req.session.basketTable == undefined){
+    req.session.basketTable = []
+  }
+  var journeySeleted = await journeyModel.find({_id : req.query.id})
+  req.session.basketTable.push(journeySeleted)
+  
+  res.render('basket', {basketTable});
 });
 
 module.exports = router;

@@ -25,7 +25,7 @@
                         <h6 class="m-2">train departure at : <%=element.departureTime%></h6>
                         <div class="d-flex align-items-center">
                             <h3 class="m-2"><%=element.price%>€</h3>
-                            <button type="button" action="submit" class="btn btn-danger m-2">Ok</button>
+                            <a type="submit" href="/basket?id=<%=element._id%>" class="btn btn-danger m-2">Ok</a>
                         </div>
                     </div>
                     <%}%>

@@ -70,8 +70,7 @@ router.get('/save', function(req, res, next) {
   res.render('', {});
 });
 
-// bdd = mongodb+srv://EdouardROUSSEL:3iE0DoUomLswhzgV@cluster0.uvhwb.mongodb.net/Ticktak?retryWrites=true&w=majority
-// 3iE0DoUomLswhzgV
+
 
 // Remplissage de la base de donnée, une fois suffit
 router.get('/save', async function(req, res, next) {

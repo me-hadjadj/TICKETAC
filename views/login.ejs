@@ -10,34 +10,41 @@
 
 <body>
     <!-- navbar -->
-    <%- include('navbar') %> 
-    <div class="container">
-        <div class="row">
-            <div class="d-flex justify-content-center">
-                <div class="col-3 d-flex flex-column m-3">
-                    <label for="sign-in">
-                        <h2 class="text-center">sign-in :</h2>
-                    </label>
-                    <form class="sign-in d-flex flex-column justify-content-center align-items-center">
-                        <input name="" type="text" class="form-control mb-3" id="formGroupExampleInput" placeholder="Email">
-                        <input name="" type="text" class="form-control mb-3" id="formGroupExampleInput2" placeholder="Password">
-                        <button type="button" action="submit" class="btn btn-danger w-40">Confirm</button>
-                    </form>
-                </div>
+    <%- include('navbar') %>
+    <!-- form-->
+        <div class="container d-flex flex-column align-items-center justify-content-center" style="height: 80vh;">
+            <div class="row col-12">
+                <div class="d-flex justify-content-center">
+                    <div class="col-3 d-flex flex-column m-3">
+                        <label for="sign-in">
+                            <h2 class="text-center">sign-in :</h2>
+                        </label>
+                        <form class="sign-in d-flex flex-column justify-content-center align-items-center">
+                            <input name="" type="text" class="form-control mb-3" id="formGroupExampleInput"
+                                placeholder="Email">
+                            <input name="" type="text" class="form-control mb-3" id="formGroupExampleInput2"
+                                placeholder="Password">
+                            <button type="button" action="submit" class="btn btn-danger w-40">Confirm</button>
+                        </form>
+                    </div>
 
-                <div class="col-3 d-flex flex-column m-3">
-                    <label for="sign-in">
-                        <h2 class="text-center">sign-in :</h2>
-                    </label>
-                    <form class="sign-in d-flex flex-column justify-content-center align-items-center">
-                        <input name="" type="text" class="form-control mb-3" id="formGroupExampleInput" placeholder="Name">
-                        <input name="" type="text" class="form-control mb-3" id="formGroupExampleInput" placeholder="Firstname">
-                        <input name="" type="text" class="form-control mb-3" id="formGroupExampleInput" placeholder="Email">
-                        <input name="" type="text" class="form-control mb-3" id="formGroupExampleInput2" placeholder="Password">
-                        <button type="button" action="submit" class="btn btn-danger w-40">Confirm</button>
-                    </form>
+                    <div class="col-3 d-flex flex-column m-3">
+                        <label for="sign-in">
+                            <h2 class="text-center">sign-in :</h2>
+                        </label>
+                        <form class="sign-in d-flex flex-column justify-content-center align-items-center">
+                            <input name="" type="text" class="form-control mb-3" id="formGroupExampleInput"
+                                placeholder="Name">
+                            <input name="" type="text" class="form-control mb-3" id="formGroupExampleInput"
+                                placeholder="Firstname">
+                            <input name="" type="text" class="form-control mb-3" id="formGroupExampleInput"
+                                placeholder="Email">
+                            <input name="" type="text" class="form-control mb-3" id="formGroupExampleInput2"
+                                placeholder="Password">
+                            <button type="button" action="submit" class="btn btn-danger w-40">Confirm</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 </body>

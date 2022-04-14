@@ -41,20 +41,22 @@ router.post('/sign-up', async function(req, res) {
 router.post('/sign-in', async function(req, res) {
   // console.log(req.body.mail)
   var actualUser = await usersModel.findOne({mail:req.body.mail});
-  console.log(req.body.mail);
-  console.log(req.body.password);
-  console.log(actualUser)
+  // console.log(req.body.mail);
+  // console.log(req.body.password);
+  // console.log(actualUser.password)
 
       if(actualUser == null){
         res.redirect('/')
-      } else {
+      } else if (actualUser !== null && req.body.password == actualUser.password){
         req.session.mail = req.body.mail;
       
         req.session.user = {
           lastname: actualUser.lastname,
           id: actualUser.id
         }
-        res.redirect('/homepage')}
+        res.redirect('/homepage')} else {
+          res.redirect('/')
+        }
       });
     
 

@@ -10,10 +10,19 @@ a {
   color: #00B7FF;
 }
 
-h2{
+h2,h4{
   color : white;
 }
-
+.error-page-style{
+  margin-top: 100px;
+}
+.basket-page-style{
+  margin-top: 100px;
+}
+.tab-style{
+  margin-top: 20px;
+}
+/* HEADER */
 .color-navbar{
   background-color: aliceblue;
   height: 100px;

@@ -13,6 +13,11 @@ a {
 h2,h4{
   color : white;
 }
+
+h6{
+  color:gray;
+}
+
 .error-page-style{
   margin-top: 100px;
 }
@@ -39,6 +44,19 @@ h2,h4{
 .footer-text{
   text-align: center;
   color: azure;
+}
+
+/* ticket in result*/
+.ticket{
+  height: 120px;
+  border-radius: 5px;
+  padding: 30px;
+}
+
+
+/*Tableau des resultats page result*/
+.resultTab{
+  margin-top: 100px;
 }
 /* TAB */
 .color-lastline{

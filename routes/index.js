@@ -41,10 +41,9 @@ router.get('/basket', async function(req, res, next) {
   if (req.session.basketTable == undefined){
     req.session.basketTable = []
   }
-  var journeySeleted = await journeyModel.find({_id : req.query.id})
+  var journeySeleted = await journeyModel.findOne({_id : req.query.id})
   req.session.basketTable.push(journeySeleted)
-  
-  res.render('basket', {basketTable});
+  res.render('basket', {tableau : req.session.basketTable});
 });
 
 module.exports = router;

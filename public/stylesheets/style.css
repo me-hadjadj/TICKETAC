@@ -9,7 +9,11 @@ body {
 a {
   color: #00B7FF;
 }
-/* HEADER */
+
+h2{
+  color : white;
+}
+
 .color-navbar{
   background-color: aliceblue;
   height: 100px;

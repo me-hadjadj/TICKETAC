@@ -46,4 +46,10 @@ router.get('/basket', async function(req, res, next) {
   res.render('basket', {tableau : req.session.basketTable});
 });
 
+router.get('/addLastTrip', function(req, res, next) {
+  //console.log(req.session.basketTable)
+  res.redirect('/basket', {tableau : req.session.basketTable});
+});
+
+
 module.exports = router;

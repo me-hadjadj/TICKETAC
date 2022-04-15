@@ -52,7 +52,10 @@ router.get('/last-trips', async function(req, res, next) {
   for (element of req.session.basketTable){
     await usersModel.updateOne({ _id: req.session.user.id }, { $push: { lasttrips: element._id}})
   }
-res.render('last-trips');
+ var userTrip = await usersModel.findOne({_id: req.session.user.id}).populate('lasttrips').exec();
+console.log(userTrip.lasttrips);
+
+res.render('last-trips',{lastTripsList : userTrip.lasttrips});
 });
 
 

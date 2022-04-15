@@ -31,15 +31,14 @@
                                 </thead>
                                 <tbody>
                                 
+                                <% for ( element of lastTripsList){%>
                                   <tr>
-                                    
-                                   
-                                    <td>24/11/2018</td>
-                                    <td>Melun / Lille</td>
-                                    <td>15:00 pm</td>
-                                    <td>121 €</td>
+                                    <td><%= new Date(element.date).toLocaleDateString() %> </td>
+                                    <td><%= element.departure %> / <%= element.arrival %></td>
+                                    <td><%= element.departureTime %> pm</td>
+                                    <td><%= element.price %> €</td>
                                   </tr>
-                                 
+                                 <% }   %> 
                                   
                                 </tbody>
                             

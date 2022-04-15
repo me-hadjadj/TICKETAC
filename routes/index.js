@@ -48,7 +48,9 @@ router.get('/basket', async function(req, res, next) {
 
 router.get('/addLastTrip', function(req, res, next) {
   //console.log(req.session.basketTable)
-  res.redirect('/basket', {tableau : req.session.basketTable});
+  //console.log(req.session.user);
+  //await userModel.updateOne({ _id: req.session.user._id }, { $push: { id: req.session.basketTable._id}})
+  res.render('LastTrip', {tableau : req.session.basketTable});
 });
 
 

@@ -43,14 +43,17 @@ router.get('/basket', async function(req, res, next) {
   }
   var journeySeleted = await journeyModel.findOne({_id : req.query.id})
   req.session.basketTable.push(journeySeleted);
+  
   res.render('basket', {tableau : req.session.basketTable});
+  
 });
 
-router.get('/addLastTrip', function(req, res, next) {
+router.get('/last-trips', function(req, res, next) {
   //console.log(req.session.basketTable)
   //console.log(req.session.user);
   //await userModel.updateOne({ _id: req.session.user._id }, { $push: { id: req.session.basketTable._id}})
-  res.render('LastTrip', {tableau : req.session.basketTable});
+res.render('last-trips');
+  
 });
 
 

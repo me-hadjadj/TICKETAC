@@ -1,7 +1,7 @@
 var mongoose = require('mongoose')
 
 var usersSchema = mongoose.Schema({
-    lasttrips: [{type: mongoose.Schema.Types.ObjectId, ref: 'journeys'}],
+    lasttrips: [{type: mongoose.Schema.Types.ObjectId, ref: 'journey'}],
     lastname : String,
     firstname :  String,
     mail: String,

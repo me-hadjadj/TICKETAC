@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var journeyModel = require('../models/journey')
+var usersModel = require('../models/users')
 require('../models/connection')
 
 
@@ -13,7 +14,6 @@ var date = ["2018-11-20","2018-11-21","2018-11-22","2018-11-23","2018-11-24"]
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-
   res.render('login', { title: 'Express' });
 });
 
@@ -33,7 +33,7 @@ router.post('/result',async function(req, res, next) {
   res.render('result', {journeyFind});
 });
 
-router.get('/homepage', function(req, res, next) {
+router.get('/homepage', async function(req, res, next) {
   res.render('homepage', {});
 });
 
@@ -48,12 +48,11 @@ router.get('/basket', async function(req, res, next) {
   
 });
 
-router.get('/last-trips', function(req, res, next) {
-  //console.log(req.session.basketTable)
-  //console.log(req.session.user);
-  //await userModel.updateOne({ _id: req.session.user._id }, { $push: { id: req.session.basketTable._id}})
+router.get('/last-trips', async function(req, res, next) {
+  for (element of req.session.basketTable){
+    await usersModel.updateOne({ _id: req.session.user.id }, { $push: { lasttrips: element._id}})
+  }
 res.render('last-trips');
-  
 });
 
 

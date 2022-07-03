@@ -1,4 +1,7 @@
-var mongoose = require('mongoose')
+//  this is my schema for my databse 
+
+
+const mongoose = require('mongoose');
 
 var journeySchema = mongoose.Schema({
     departure: String,
@@ -7,7 +10,7 @@ var journeySchema = mongoose.Schema({
     departureTime: String,
     price: Number,
   });
-
+  
   var journeyModel = mongoose.model('journey', journeySchema);
 
   module.exports = journeyModel

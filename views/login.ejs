@@ -1,53 +1,130 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>Ticketac</title>
+  </head>
+  <body>
+    <div class="home">
+      <!-- Alert message -->
+      <% if(alertMessage.length > 0){ %>
+      <div style="text-align: center; padding-top: 20px">
+        <h3 style="color: red">
+          No account found,<br />You need to Sign-up first
+        </h3>
+      </div>
+      <% } %>
 
-<head>
-    <title>Login</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-</head>
+      <!-- Input Field -->
+      <div class="inputFieldLogin">
+        <!-- Sign-In -->
+        <form
+          style="text-align: center; margin: 50px"
+          action="/sign-in"
+          method="POST"
+        >
+          <!-- Login title -->
+          <h3 class="logIn">Sign-in :</h3>
 
-<body>
-    <!-- navbar -->
-    <%- include('navbar-loggin') %>
-    <!-- form-->
-        <div class="container d-flex flex-column align-items-center justify-content-center" style="height: 88vh;">
-            <div class="row col-12">
-                <div class="d-flex justify-content-center">
-                    <!-- SIGN UP AREA -->
-                    <div class="col-2 d-flex flex-column m-4">
-                        <label for="sign-in">
-                            <h2 class="text-center">sign-in :</h2>
-                        </label>
-                        <form action="/users/sign-in" method="post" class="sign-in d-flex flex-column justify-content-center align-items-center">
-                            <input name="mail" type="text" class="form-control mb-3" id="formGroupExampleInput"
-                                placeholder="Email">
-                            <input name="password" type="text" class="form-control mb-3" id="formGroupExampleInput2"
-                                placeholder="Password">
-                            <button type="submit" class="btn btn-danger w-40">Confirm</button>
-                        </form>
-                    </div>
-                     <!-- SIGN IN AREA -->
-                    <div class="col-2 d-flex flex-column m-4">
-                        <label for="sign-in">
-                            <h2 class="text-center">sign-up :</h2>
-                        </label>
-                        <form action="/users/sign-up" method="post" class="sign-in d-flex flex-column justify-content-center align-items-center">
-                            <input name="lastname" type="text" class="form-control mb-3" id="formGroupExampleInput"
-                                placeholder="Lastname">
-                            <input name="firstname" type="text" class="form-control mb-3" id="formGroupExampleInput"
-                                placeholder="Firstname">
-                            <input name="mail" type="text" class="form-control mb-3" id="formGroupExampleInput"
-                                placeholder="Email">
-                            <input name="password" type="text" class="form-control mb-3" id="formGroupExampleInput2"
-                                placeholder="Password">
-                            <button type="submit" class="btn btn-danger w-40">Confirm</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-     <!-- footer -->
-     <%- include('footer') %>
-</body>
+          <div class="form-group inputResume">
+            <input
+              name="signInEmail"
+              type="email"
+              class="form-control"
+              id="inputEmailSI"
+              placeholder="Email"
+            />
+          </div>
+
+          <div class="form-group inputResume">
+            <input
+              name="signInPassword"
+              type="password"
+              class="form-control"
+              id="inputPasswordSI"
+              placeholder="Password"
+            />
+          </div>
+
+          <button type="submit" class="btn btn-danger">Confirm</button>
+        </form>
+
+        <!-- Sign-up -->
+        <form style="text-align: center" action="/sign-up" method="POST">
+          <!-- Login title -->
+          <h3 class="logIn">Sign-up :</h3>
+
+          <div class="form-group inputResume">
+            <input
+              name="signUpFirstName"
+              type="text"
+              class="form-control"
+              id="inputFirstNameSU"
+              placeholder="FirstName"
+            />
+          </div>
+
+          <div class="form-group inputResume">
+            <input
+              name="signUpName"
+              type="text"
+              class="form-control"
+              id="inputNameSU"
+              placeholder="Name"
+            />
+          </div>
+
+          <div class="form-group inputResume">
+            <input
+              name="signUpEmail"
+              type="text"
+              class="form-control"
+              id="inputEmailSU"
+              placeholder="Email"
+            />
+          </div>
+
+          <div class="form-group inputResume">
+            <input
+              name="signUpPassword"
+              type="password"
+              class="form-control"
+              id="inputPasswordSU"
+              placeholder="Password"
+            />
+          </div>
+
+          <button type="submit" class="btn btn-danger">Confirm</button>
+        </form>
+      </div>
+
+      <div class="footer">
+        <p>© 2019 LaCapsule</p>
+      </div>
+    </div>
+  </body>
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"
+  ></script>
+</html>

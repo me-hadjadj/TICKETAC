@@ -6,21 +6,24 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-
-require('./models/connection')
-
-var session = require('express-session');
-
+var models = require('./models/bdd')
+var session = require("express-session");
 var app = express();
 
-app.use(
-  session({
-   secret: 'a4f8071f-c873-4447-8ee2',
-   resave: false,
-   saveUninitialized: false,
-  })
-  );
+app.locals.dateFormat = function (date) {
+ 
+  var newDate = new Date(date);
+  var format =  newDate.getDate() + '/'+ (newDate.getMonth()+ 1) + '/'  + newDate.getFullYear();
+  return format
+}
 
+app.use(
+  session({ 
+  secret: 'a4f8071f-c873-4447-8ee2',
+  resave: false,
+  saveUninitialized: false,
+  })
+ );
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
